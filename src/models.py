@@ -90,15 +90,15 @@ class Category:
 
 class Smartphone(Product):
     def __init__(
-            self,
-            name: str,
-            description: str,
-            price: float,
-            quantity: int,
-            efficiency: float,
-            model: str,
-            memory: int,
-            color: str,
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        efficiency: float,
+        model: str,
+        memory: int,
+        color: str,
     ):
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
@@ -109,14 +109,14 @@ class Smartphone(Product):
 
 class LawnGrass(Product):
     def __init__(
-            self,
-            name: str,
-            description: str,
-            price: float,
-            quantity: int,
-            country: str,
-            germination_period: str,
-            color: str,
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        country: str,
+        germination_period: str,
+        color: str,
     ):
         super().__init__(name, description, price, quantity)
         self.country = country
