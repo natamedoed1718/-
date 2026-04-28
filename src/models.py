@@ -21,6 +21,9 @@ class Product:
 
         return self.price * self.quantity + other.price * other.quantity
 
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
     @classmethod
     def new_product(cls, data: dict, products: list["Product"] | None = None):
         if products:
