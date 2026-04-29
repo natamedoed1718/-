@@ -21,6 +21,9 @@ class Product:
 
         return self.price * self.quantity + other.price * other.quantity
 
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
     @classmethod
     def new_product(cls, data: dict, products: list["Product"] | None = None):
         if products:
@@ -67,6 +70,10 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
+    def __str__(self):
+        total_quantity = sum(product.quantity for product in self.__products)
+        return f"{self.name}, количество продуктов: {total_quantity} шт."
+
     # приватный список продуктов
     def add_product(self, product):
         if not isinstance(product, Product):
@@ -90,15 +97,15 @@ class Category:
 
 class Smartphone(Product):
     def __init__(
-            self,
-            name: str,
-            description: str,
-            price: float,
-            quantity: int,
-            efficiency: float,
-            model: str,
-            memory: int,
-            color: str,
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        efficiency: float,
+        model: str,
+        memory: int,
+        color: str,
     ):
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
@@ -109,14 +116,14 @@ class Smartphone(Product):
 
 class LawnGrass(Product):
     def __init__(
-            self,
-            name: str,
-            description: str,
-            price: float,
-            quantity: int,
-            country: str,
-            germination_period: str,
-            color: str,
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        country: str,
+        germination_period: str,
+        color: str,
     ):
         super().__init__(name, description, price, quantity)
         self.country = country

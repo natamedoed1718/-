@@ -1,6 +1,6 @@
 import pytest
 
-from src.models import Category, Product, Smartphone, LawnGrass
+from src.models import Category, LawnGrass, Product, Smartphone
 
 
 @pytest.fixture
@@ -102,4 +102,3 @@ def test_add_invalid_product():
 
     with pytest.raises(TypeError):
         category.add_product("not a product")
-
